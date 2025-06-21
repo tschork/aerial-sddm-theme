@@ -74,6 +74,7 @@ Rectangle {
         MouseArea {
             id: mouseArea1
             anchors.fill: parent;
+
             //onPressed: {playlist1.shuffle(); playlist1.next();}
             onPressed: {
                 fader1.state = fader1.state == "off" ? "on" : "off" ;
@@ -95,9 +96,9 @@ Rectangle {
     }
     WallpaperFader {
         id: fader1
-        visible: true
+        visible: false
         anchors.fill: parent
-        state: "off"
+        state: "on"
         source: video1
         mainStack: login_container
         footer: login_container
@@ -537,7 +538,8 @@ Rectangle {
         /* else */
         /*     password_input_box.focus = true */
 
-        video1.focus = true
+        //video1.focus = true
+	password_input_box.focus = true
 
         // load and randomize playlist
         var time = parseInt(new Date().toLocaleTimeString(Qt.locale(),'h'))
